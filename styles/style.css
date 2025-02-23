@@ -125,12 +125,11 @@ ol {
   outline-offset: 2px;
 }
 
-.search-form__textfield{
+.search-form__textfield {
   width: 225px;
   height: 27px;
 
   font-family: "Fira Sans Condensed", sans-serif;
-  font-weight: 400;
   font-weight: 400;
   font-size: 18px;
   color: #fff;
@@ -147,7 +146,7 @@ ol {
   appearance: none;
 }
 
-.search-form__textfield:focus { 
+.search-form__textfield:focus {
   outline: none;
 }
 
@@ -158,7 +157,7 @@ ol {
   border-right-color: #fff;
 }
 
-.search-form__textfield::placeholder{
+.search-form__textfield::placeholder {
   color: rgba(255, 255, 255, 0.7);
 }
 
@@ -170,12 +169,12 @@ ol {
 }
 
 /* закладываем место в высоту для подчеркивания */
-.search-form__label:has(.search-form__checkbox) .search-form__label-text{
+.search-form__label:has(.search-form__checkbox) .search-form__label-text {
   border-bottom: 1px solid transparent;
 }
 
 /* нижнее подчеркивание чекбоксов при :hover */
-.search-form__label:has(.search-form__checkbox):hover .search-form__label-text{
+.search-form__label:has(.search-form__checkbox):hover .search-form__label-text {
   /* border-bottom: 1px solid #fff; */
   text-decoration: underline;
   text-decoration-skip-ink: none;
@@ -193,7 +192,7 @@ ol {
 }
 
 /* стиль чекбокса когда он checked */
-.search-form__checkbox:checked + .search-form__pseudo-checkbox::after{
+.search-form__checkbox:checked + .search-form__pseudo-checkbox::after {
   content: "";
 
   display: block;
@@ -235,7 +234,6 @@ ol {
   outline: 1px solid #fff;
   outline-offset: 2px;
 }
-
 
 /* кнопка "найти" */
 .search-form__submit-button {
@@ -301,10 +299,6 @@ ol {
   flex-direction: column;
   gap: 30px;
 }
-
-.content__card-link {
-  display: block;
-}
 /* ---конец content__details  */
 
 /* --------------- темплейт карточки --- */
@@ -314,6 +308,8 @@ ol {
 }
 
 .content__card-link {
+  display: block;
+
   border: 1px solid #1b1919;
 
   width: 392px;
@@ -386,9 +382,9 @@ ol {
   line-height: 90%;
   color: #fff;
 
-  display: -webkit-box; 
-  -webkit-box-orient: vertical; 
-  -webkit-line-clamp: 4; 
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
 }
 
 .content__video-card-thumbnail {
@@ -426,4 +422,4 @@ ol {
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
   white-space: nowrap;
-} 
+}
