@@ -13,9 +13,13 @@ html {
   block-size: 100%;
   margin: auto;
   color: #fff;
-  font-family: 'Fira Sans Condensed', sans-serif;
+  font-family: "Fira Sans Condensed", sans-serif;
   font-size: 18px;
   background-color: #1b1919;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 h1,
@@ -37,6 +41,369 @@ ol {
   list-style: none;
 }
 
+.content {
+  max-width: 1140px;
+  height: fit-content;
+
+  display: grid;
+  grid-template-areas: "result details";
+  align-items: end;
+  gap: 30px;
+}
+
+/* ----------------------- секция result ---------------*/
+.result {
+  grid-area: result;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.result__video-container {
+  position: relative;
+}
+
+.result__video {
+  width: 711px;
+  height: 386px;
+
+  object-fit: cover;
+  object-position: center;
+}
+
+.search-form {
+  display: flex;
+  align-items: end;
+  gap: 40px;
+}
+
+.search-form__fieldset {
+  border: none;
+  height: 54px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.search-form__fieldset-title {
+  font-family: "Fira Sans Condensed", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  color: #fff;
+}
+
+.search-form__label {
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  gap: 5px;
+
+  font-family: "Fira Sans Condensed", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  color: #fff;
+
+  cursor: pointer;
+}
+
+/* стили чекбоксов, когда label:active */
+.search-form__label:active .search-form__pseudo-checkbox::after {
+  content: "";
+
+  display: block;
+  width: 15px;
+  height: 15px;
+
+  background-color: #fff;
+}
+
+/* outline чекбоксов при фокусе */
+.search-form__label:not(:active):has(:focus-visible) {
+  outline: 1px solid #fff;
+  outline-offset: 2px;
+}
+
+.search-form__textfield{
+  width: 225px;
+  height: 27px;
+
+  font-family: "Fira Sans Condensed", sans-serif;
+  font-weight: 400;
+  font-weight: 400;
+  font-size: 18px;
+  color: #fff;
+  background-color: inherit;
+
+  border: none;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  border-left: 1px solid transparent;
+  border-right: 1px solid transparent;
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.search-form__textfield:focus { 
+  outline: none;
+}
+
+/* границы текстового инпута при зажатии */
+.search-form__textfield:active {
+  outline: none;
+  border-left-color: #fff;
+  border-right-color: #fff;
+}
+
+.search-form__textfield::placeholder{
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.search-form__checkbox-list {
+  display: flex;
+  gap: 15px;
+
+  padding-bottom: 5px;
+}
+
+/* закладываем место в высоту для подчеркивания */
+.search-form__label:has(.search-form__checkbox) .search-form__label-text{
+  border-bottom: 1px solid transparent;
+}
+
+/* нижнее подчеркивание чекбоксов при :hover */
+.search-form__label:has(.search-form__checkbox):hover .search-form__label-text{
+  /* border-bottom: 1px solid #fff; */
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  text-underline-offset: 2px;
+}
+
+.search-form__pseudo-checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #fff;
+  width: 19px;
+  height: 19px;
+}
+
+/* стиль чекбокса когда он checked */
+.search-form__checkbox:checked + .search-form__pseudo-checkbox::after{
+  content: "";
+
+  display: block;
+  width: 15px;
+  height: 15px;
+
+  background-color: #fff;
+}
+
+/* задаем общий стиль кнопкам */
+.button {
+  background-color: transparent;
+
+  font-family: "Fira Sans Condensed", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  text-align: center;
+  color: #fff;
+
+  border: 1px solid #fff;
+
+  cursor: pointer;
+}
+
+.button:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.button:active {
+  background-color: #545050;
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button:focus-visible {
+  outline: 1px solid #fff;
+  outline-offset: 2px;
+}
+
+
+/* кнопка "найти" */
+.search-form__submit-button {
+  height: 34px;
+  width: 194px;
+  align-self: flex-end;
+}
+
+/* кнопка "показать еще"  */
+.more-button {
+  height: 34px;
+  width: 390px;
+
+  white-space: nowrap;
+
+  padding: 6px 142px;
+
+  margin-bottom: 3px;
+}
+
+/*----конец секции result -------- */
+
+/* -------------------- секция content__details -------*/
+.content__details {
+  grid-area: details;
+
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+
+  width: 100%;
+  height: 100%;
+}
+
+.title {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 75px;
+  line-height: 94%;
+
+  font-family: "Oswald", sans-serif;
+}
+
+.content__accent {
+  color: #545050;
+}
+
+.content__list-container {
+  max-height: 296px;
+
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+
+  overflow-y: auto;
+}
+
+.content__list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.content__card-link {
+  display: block;
+}
+/* ---конец content__details  */
+
+/* --------------- темплейт карточки --- */
+.content__list-item {
+  margin-left: 3px;
+  margin-right: 3px;
+}
+
+.content__card-link {
+  border: 1px solid #1b1919;
+
+  width: 392px;
+
+  text-decoration: none;
+  color: #fff;
+}
+
+/* стиль для описания карточки при наведении */
+.content__card-link:hover {
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  text-underline-offset: 2px;
+}
+
+/* стиль для зажатия по карточке и активной карточки */
+.content__card-link:active,
+.content__card-link_current {
+  background-color: #545050;
+}
+
+/* стиль для карточки в фокусе */
+.content__card-link:focus {
+  outline: none;
+}
+
+/* стиль карточки при фокусе с таба */
+.content__card-link:focus-visible {
+  outline: none;
+
+  border: 1px solid #fff;
+  width: 392px;
+}
+
+.content__video-card {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+}
+
+.content__video-card-description-container {
+  flex-grow: 1;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 4px;
+}
+
+.content__video-card-title {
+  width: fit-content;
+  max-width: 98%;
+
+  font-family: "Oswald", sans-serif;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 100%;
+  text-transform: uppercase;
+  color: inherit;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.content__video-card-description {
+  font-family: "Fira Sans Condensed";
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 90%;
+  color: #fff;
+
+  display: -webkit-box; 
+  -webkit-box-orient: vertical; 
+  -webkit-line-clamp: 4; 
+}
+
+.content__video-card-thumbnail {
+  display: block;
+
+  height: 100%;
+  width: 100%;
+  max-height: 103px;
+  max-width: 194px;
+
+  object-fit: cover;
+  object-position: center;
+}
+/* ------- конец темплейта карточки */
+
 /* Кастомный скроллбар */
 .custom-scrollbar::-webkit-scrollbar {
   width: 4px;
@@ -47,5 +414,16 @@ ol {
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background-color: #D9D9D9;
+  background-color: #d9d9d9;
 }
+
+/* скрываем лейблы кастомным решением */
+.visually-hidden {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+} 
