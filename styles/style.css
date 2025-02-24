@@ -132,10 +132,10 @@ ol {
   width: 225px;
   height: 27px;
 
-  font-family: "Fira Sans Condensed", sans-serif; 
+  font-family: "Fira Sans Condensed", sans-serif;
   font-weight: 400;
   font-size: 18px;
-  color: #fff; 
+  color: #fff;
 
   background-color: inherit;
 
@@ -190,7 +190,7 @@ ol {
   justify-content: center;
 
   border: 1px solid #fff;
-  
+
   width: 19px;
   height: 19px;
 }
@@ -378,7 +378,7 @@ ol {
 }
 
 .content__video-card-description {
-  font-family: "Fira Sans Condensed", sans-serif ;
+  font-family: "Fira Sans Condensed", sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 90%;
