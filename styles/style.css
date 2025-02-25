@@ -324,7 +324,6 @@ ol {
 .content__card-link:hover {
   text-decoration: underline;
   text-decoration-skip-ink: none;
-  text-underline-offset: 2px;
 }
 
 /* стиль для зажатия по карточке и активной карточки */
